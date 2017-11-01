@@ -1,0 +1,356 @@
+
+Xmega_01.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000002d4  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00802000  00802000  00000328  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .comment      00000030  00000000  00000000  00000328  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 00000044  00000000  00000000  00000358  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000030  00000000  00000000  0000039c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00003a2e  00000000  00000000  000003cc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000031c7  00000000  00000000  00003dfa  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000005cb  00000000  00000000  00006fc1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000044  00000000  00000000  0000758c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000029f5  00000000  00000000  000075d0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000062  00000000  00000000  00009fc5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000020  00000000  00000000  0000a027  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 fe 00 	jmp	0x1fc	; 0x1fc <__ctors_end>
+   4:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+   8:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+   c:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  10:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  14:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  18:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  1c:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  20:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  24:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  28:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  2c:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  30:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  34:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  38:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  3c:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  40:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  44:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  48:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  4c:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  50:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  54:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  58:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  5c:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  60:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  64:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  68:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  6c:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  70:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  74:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  78:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  7c:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  80:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  84:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  88:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  8c:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  90:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  94:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  98:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  9c:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  a0:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  a4:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  a8:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  ac:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  b0:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  b4:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  b8:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  bc:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  c0:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  c4:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  c8:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  cc:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  d0:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  d4:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  d8:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  dc:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  e0:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  e4:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  e8:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  ec:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  f0:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  f4:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  f8:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+  fc:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 100:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 104:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 108:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 10c:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 110:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 114:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 118:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 11c:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 120:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 124:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 128:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 12c:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 130:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 134:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 138:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 13c:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 140:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 144:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 148:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 14c:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 150:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 154:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 158:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 15c:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 160:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 164:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 168:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 16c:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 170:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 174:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 178:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 17c:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 180:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 184:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 188:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 18c:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 190:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 194:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 198:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 19c:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 1a0:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 1a4:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 1a8:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 1ac:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 1b0:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 1b4:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 1b8:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 1bc:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 1c0:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 1c4:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 1c8:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 1cc:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 1d0:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 1d4:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 1d8:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 1dc:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 1e0:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 1e4:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 1e8:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 1ec:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 1f0:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 1f4:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+ 1f8:	0c 94 0a 01 	jmp	0x214	; 0x214 <__bad_interrupt>
+
+000001fc <__ctors_end>:
+ 1fc:	11 24       	eor	r1, r1
+ 1fe:	1f be       	out	0x3f, r1	; 63
+ 200:	cf ef       	ldi	r28, 0xFF	; 255
+ 202:	cd bf       	out	0x3d, r28	; 61
+ 204:	df e5       	ldi	r29, 0x5F	; 95
+ 206:	de bf       	out	0x3e, r29	; 62
+ 208:	00 e0       	ldi	r16, 0x00	; 0
+ 20a:	0c bf       	out	0x3c, r16	; 60
+ 20c:	0e 94 56 01 	call	0x2ac	; 0x2ac <main>
+ 210:	0c 94 68 01 	jmp	0x2d0	; 0x2d0 <_exit>
+
+00000214 <__bad_interrupt>:
+ 214:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000218 <conf_relosj>:
+#include <util/delay.h>
+
+void conf_relosj()
+{
+	unsigned char n, s;
+	s=SREG;//leemos el estado de  las banderas del microcontrolador
+ 218:	9f b7       	in	r25, 0x3f	; 63
+	cli(); //deshabilidtamos las interrupciones
+ 21a:	f8 94       	cli
+	OSC.XOSCCTRL=OSC_FRQRANGE_12TO16_gc | OSC_XOSCSEL_XTAL_16KCLK_gc;
+ 21c:	e0 e5       	ldi	r30, 0x50	; 80
+ 21e:	f0 e0       	ldi	r31, 0x00	; 0
+ 220:	8b ec       	ldi	r24, 0xCB	; 203
+ 222:	82 83       	std	Z+2, r24	; 0x02
+	//ACTIVAMOS EL OSCILADOR /CRISTAL EXTERNO
+	OSC.CTRL|=OSC_XOSCEN_bm;
+ 224:	80 81       	ld	r24, Z
+ 226:	88 60       	ori	r24, 0x08	; 8
+ 228:	80 83       	st	Z, r24
+	//eSPERAMOS QUE SE ESTABILISE EL crista/oscilador
+	while((OSC.STATUS & OSC_XOSCRDY_bm)==0);
+ 22a:	81 81       	ldd	r24, Z+1	; 0x01
+ 22c:	83 ff       	sbrs	r24, 3
+ 22e:	fd cf       	rjmp	.-6      	; 0x22a <conf_relosj+0x12>
+	//configurando el PLL
+	n=(CLK.PSCTRL & (~(OSC_PLLSRC_gm|OSC_PLLDIV_bm|OSC_PLLFAC_gm)))|OSC_PLLSRC_XOSC_gc|(0<<OSC_PLLDIV_bp)|2;
+ 230:	e0 e4       	ldi	r30, 0x40	; 64
+ 232:	f0 e0       	ldi	r31, 0x00	; 0
+ 234:	81 81       	ldd	r24, Z+1	; 0x01
+	CCP=CCP_IOREG_gc;//habilitando escritura en registro
+ 236:	28 ed       	ldi	r18, 0xD8	; 216
+ 238:	24 bf       	out	0x34, r18	; 52
+	OSC.PLLCTRL=n;
+ 23a:	a0 e5       	ldi	r26, 0x50	; 80
+ 23c:	b0 e0       	ldi	r27, 0x00	; 0
+ 23e:	82 ec       	ldi	r24, 0xC2	; 194
+ 240:	15 96       	adiw	r26, 0x05	; 5
+ 242:	8c 93       	st	X, r24
+ 244:	15 97       	sbiw	r26, 0x05	; 5
+	OSC.CTRL|=OSC_PLLEN_bm;//habilitamos el PLL
+ 246:	8c 91       	ld	r24, X
+ 248:	80 61       	ori	r24, 0x10	; 16
+ 24a:	8c 93       	st	X, r24
+	
+	//Configuramos los prescaladores (divisores)
+	n=(CLK.PSCTRL&(~(CLK_PSADIV_gm|CLK_PSADIV1_bp|CLK_PSADIV0_bm)))|CLK_PSADIV_1_gc|CLK_PSBCDIV_1_1_gc;
+ 24c:	81 81       	ldd	r24, Z+1	; 0x01
+ 24e:	80 78       	andi	r24, 0x80	; 128
+	CCP=CCP_IOREG_gc;
+ 250:	24 bf       	out	0x34, r18	; 52
+	CLK.CTRL=n;
+ 252:	80 83       	st	Z, r24
+	//Esperamos estabilizacion PLL
+	while ((OSC.STATUS & OSC_PLLRDY_bm)==0);
+ 254:	e0 e5       	ldi	r30, 0x50	; 80
+ 256:	f0 e0       	ldi	r31, 0x00	; 0
+ 258:	81 81       	ldd	r24, Z+1	; 0x01
+ 25a:	84 ff       	sbrs	r24, 4
+ 25c:	fd cf       	rjmp	.-6      	; 0x258 <conf_relosj+0x40>
+	
+	//Seleccionamos el tipo de duente de reloj(PLL) Phase Look Loop
+	n=(CLK.CTRL & (~CLK_SCLKSEL_gm))|CLK_SCLKSEL_PLL_gc;
+ 25e:	e0 e4       	ldi	r30, 0x40	; 64
+ 260:	f0 e0       	ldi	r31, 0x00	; 0
+ 262:	80 81       	ld	r24, Z
+ 264:	88 7f       	andi	r24, 0xF8	; 248
+ 266:	84 60       	ori	r24, 0x04	; 4
+	CCP=CCP_IOREG_gc;
+ 268:	28 ed       	ldi	r18, 0xD8	; 216
+ 26a:	24 bf       	out	0x34, r18	; 52
+	CLK.CTRL=n;
+ 26c:	80 83       	st	Z, r24
+	
+	//Deshabilitar los osciladores no utilizados como el de 2Hz, 32 MHz internos
+	OSC.CTRL&=~(OSC_RC2MEN_bm | OSC_RC32MEN_bm | OSC_RC32KEN_bm);
+ 26e:	e0 e5       	ldi	r30, 0x50	; 80
+ 270:	f0 e0       	ldi	r31, 0x00	; 0
+ 272:	80 81       	ld	r24, Z
+ 274:	88 7f       	andi	r24, 0xF8	; 248
+ 276:	80 83       	st	Z, r24
+	
+	//Deshabilitamos CKLPER salida de senal de cristal por el pin T0 o T1 del microcontrolador
+	PORTCFG.CLKEVOUT &=~(PORTCFG_CLKOUTSEL_gm|PORTCFG_CLKOUT_gm);
+ 278:	e0 eb       	ldi	r30, 0xB0	; 176
+ 27a:	f0 e0       	ldi	r31, 0x00	; 0
+ 27c:	84 81       	ldd	r24, Z+4	; 0x04
+ 27e:	80 7f       	andi	r24, 0xF0	; 240
+ 280:	84 83       	std	Z+4, r24	; 0x04
+	//Reescribimos el estado inicial de las banderas
+	SREG=s;
+ 282:	9f bf       	out	0x3f, r25	; 63
+ 284:	08 95       	ret
+
+00000286 <conf_puertos>:
+	
+}
+
+void conf_puertos()
+{
+	PORTA.DIR=0xFF;//configurar salidad
+ 286:	e0 e0       	ldi	r30, 0x00	; 0
+ 288:	f6 e0       	ldi	r31, 0x06	; 6
+ 28a:	8f ef       	ldi	r24, 0xFF	; 255
+ 28c:	80 83       	st	Z, r24
+	PORTA.OUT=0x00;//limpiamos puerto con ceros
+ 28e:	14 82       	std	Z+4, r1	; 0x04
+	//configuramos el puerto A con salidas totempole
+	PORTA.PIN0CTRL=PORT_OPC_TOTEM_gc;
+ 290:	10 8a       	std	Z+16, r1	; 0x10
+	PORTA.PIN1CTRL=PORT_OPC_TOTEM_gc;
+ 292:	11 8a       	std	Z+17, r1	; 0x11
+	PORTA.PIN2CTRL=PORT_OPC_TOTEM_gc;
+ 294:	12 8a       	std	Z+18, r1	; 0x12
+	PORTA.PIN3CTRL=PORT_OPC_TOTEM_gc;
+ 296:	13 8a       	std	Z+19, r1	; 0x13
+	PORTA.PIN4CTRL=PORT_OPC_TOTEM_gc;
+ 298:	14 8a       	std	Z+20, r1	; 0x14
+	PORTA.PIN5CTRL=PORT_OPC_TOTEM_gc;
+ 29a:	15 8a       	std	Z+21, r1	; 0x15
+	PORTA.PIN6CTRL=PORT_OPC_TOTEM_gc;
+ 29c:	16 8a       	std	Z+22, r1	; 0x16
+	PORTA.PIN7CTRL=PORT_OPC_TOTEM_gc;
+ 29e:	17 8a       	std	Z+23, r1	; 0x17
+	
+	//Interrupciones no habilitadas (tiene prioridad)
+	//no utilizamos la prioridad de las interrupciones
+	PORTA.INTCTRL = (PORTA.INTCTRL&(~(PORT_INT1LVL_gm|PORT_INT0LVL_gm)))|PORT_INT1LVL_OFF_gc|PORT_INT0LVL_OFF_gc;
+ 2a0:	81 85       	ldd	r24, Z+9	; 0x09
+ 2a2:	80 7f       	andi	r24, 0xF0	; 240
+ 2a4:	81 87       	std	Z+9, r24	; 0x09
+	
+	PORTA.INT0MASK=0x00;
+ 2a6:	12 86       	std	Z+10, r1	; 0x0a
+	PORTA.INT1MASK=0x00;
+ 2a8:	13 86       	std	Z+11, r1	; 0x0b
+ 2aa:	08 95       	ret
+
+000002ac <main>:
+
+int main(void)
+{
+	unsigned char n;
+	//Vamos a asegurarnos que las interrupciones 
+	n=(PMIC.CTRL&(~(PMIC_RREN_bm|PMIC_IVSEL_bm|PMIC_HILVLEN_bm|PMIC_MEDLVLEN_bm|PMIC_LOLVLEN_bm)));
+ 2ac:	e0 ea       	ldi	r30, 0xA0	; 160
+ 2ae:	f0 e0       	ldi	r31, 0x00	; 0
+ 2b0:	82 81       	ldd	r24, Z+2	; 0x02
+ 2b2:	88 73       	andi	r24, 0x38	; 56
+	CCP=CCP_IOREG_gc;
+ 2b4:	98 ed       	ldi	r25, 0xD8	; 216
+ 2b6:	94 bf       	out	0x34, r25	; 52
+	PMIC.CTRL=n;
+ 2b8:	82 83       	std	Z+2, r24	; 0x02
+	PMIC.INTPRI=0x00;
+ 2ba:	11 82       	std	Z+1, r1	; 0x01
+	
+	conf_relosj();
+ 2bc:	0e 94 0c 01 	call	0x218	; 0x218 <conf_relosj>
+	conf_puertos();
+ 2c0:	0e 94 43 01 	call	0x286	; 0x286 <conf_puertos>
+	
+	
+    /* Replace with your application code */
+    while (1) 
+    {
+		PORTA.OUT=PORTA.OUT+1;
+ 2c4:	e0 e0       	ldi	r30, 0x00	; 0
+ 2c6:	f6 e0       	ldi	r31, 0x06	; 6
+ 2c8:	84 81       	ldd	r24, Z+4	; 0x04
+ 2ca:	8f 5f       	subi	r24, 0xFF	; 255
+ 2cc:	84 83       	std	Z+4, r24	; 0x04
+    }
+ 2ce:	fc cf       	rjmp	.-8      	; 0x2c8 <main+0x1c>
+
+000002d0 <_exit>:
+ 2d0:	f8 94       	cli
+
+000002d2 <__stop_program>:
+ 2d2:	ff cf       	rjmp	.-2      	; 0x2d2 <__stop_program>

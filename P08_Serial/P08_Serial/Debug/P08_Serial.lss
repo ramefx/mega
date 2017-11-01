@@ -1,0 +1,194 @@
+
+P08_Serial.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  00000166  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000112  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  00000166  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000198  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000038  00000000  00000000  000001d8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000006f2  00000000  00000000  00000210  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 0000063f  00000000  00000000  00000902  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000290  00000000  00000000  00000f41  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000054  00000000  00000000  000011d4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000371  00000000  00000000  00001228  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_ranges 00000028  00000000  00000000  00001599  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+   8:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+   c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  10:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  14:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  18:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  1c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  20:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  24:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  28:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  2c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  30:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  34:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  38:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  3c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  40:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  44:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  48:	0c 94 55 00 	jmp	0xaa	; 0xaa <__vector_18>
+  4c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  50:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  54:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  58:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  5c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  60:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  64:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+  74:	0e 94 81 00 	call	0x102	; 0x102 <main>
+  78:	0c 94 87 00 	jmp	0x10e	; 0x10e <_exit>
+
+0000007c <__bad_interrupt>:
+  7c:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000080 <conf_puertos>:
+#include <avr/interrupt.h>
+void conf_puertos();
+void con_usart0();//9600baudios s/p con 1 bit de error
+
+void conf_puertos(){
+	DDRC=0x3F;		//configurar puerto c de salida
+  80:	8f e3       	ldi	r24, 0x3F	; 63
+  82:	87 b9       	out	0x07, r24	; 7
+	DDRD=0x02;		//configurar pd1 tx como salida 
+  84:	82 e0       	ldi	r24, 0x02	; 2
+  86:	8a b9       	out	0x0a, r24	; 10
+	PORTC=0x00;		//limpiar pueto
+  88:	18 b8       	out	0x08, r1	; 8
+  8a:	08 95       	ret
+
+0000008c <con_usart0>:
+	
+}
+
+void con_usart0(){//configuracion de puerto serie UART/USART
+	//--------------|velocidad|--------------
+	UCSR0A=(0<<TXC0)|(0<<U2X0)|(0<<MPCM0);//no utilizamos doble de velocidad y no utilizamos comunicacion multiprocesador
+  8c:	10 92 c0 00 	sts	0x00C0, r1	; 0x8000c0 <__TEXT_REGION_LENGTH__+0x7e00c0>
+	UCSR0B=(1<<RXCIE0)|(0<<TXCIE0)|(0<<UDRIE0)|(1<<RXEN0)/*recepcion de datos*/|(1<<TXCIE0)/*habilitar trasmision*/|(0<<UCSZ02)|(0<<TXB80);
+  90:	80 ed       	ldi	r24, 0xD0	; 208
+  92:	80 93 c1 00 	sts	0x00C1, r24	; 0x8000c1 <__TEXT_REGION_LENGTH__+0x7e00c1>
+	UCSR0C=(0<<UMSEL01)|(0<<UMSEL00)|(0<<UPM01)|(0<<UPM00)|(0<<USBS0)|(1<<UCSZ01)|(1<<UCSZ00)|(0<<UCPOL0);
+  96:	86 e0       	ldi	r24, 0x06	; 6
+  98:	80 93 c2 00 	sts	0x00C2, r24	; 0x8000c2 <__TEXT_REGION_LENGTH__+0x7e00c2>
+	//UCSR0C=(0<<UMSEL01)|(0<<UMSEL00)|(0<<UPM01)|(0<<UMSEL00)/*aqui esta mal*/|(0<<USBS0)|(1<<UCSZ01)|(1<<UCSZ00)|(0<<UCPOL0);
+	UBRR0=95;//CONFIGURAMOS UTILIZANDO UN CRISTAL DE EN DSHEET /14.7456mhZ 95//11.0592Mhz 71//8MHz 51//1Mhz 6/
+  9c:	8f e5       	ldi	r24, 0x5F	; 95
+  9e:	90 e0       	ldi	r25, 0x00	; 0
+  a0:	90 93 c5 00 	sts	0x00C5, r25	; 0x8000c5 <__TEXT_REGION_LENGTH__+0x7e00c5>
+  a4:	80 93 c4 00 	sts	0x00C4, r24	; 0x8000c4 <__TEXT_REGION_LENGTH__+0x7e00c4>
+  a8:	08 95       	ret
+
+000000aa <__vector_18>:
+	//UBRR0=51;
+}
+
+ISR(USART_RX_vect,ISR_NAKED){//Interrupcion de resepcion de datos 
+	char dato;
+	dato=UDR0;//recepcion de caracter por puerto PD1 Rx
+  aa:	80 91 c6 00 	lds	r24, 0x00C6	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7e00c6>
+	switch(dato){
+  ae:	8d 36       	cpi	r24, 0x6D	; 109
+  b0:	a9 f0       	breq	.+42     	; 0xdc <__vector_18+0x32>
+  b2:	38 f4       	brcc	.+14     	; 0xc2 <__vector_18+0x18>
+  b4:	81 36       	cpi	r24, 0x61	; 97
+  b6:	79 f0       	breq	.+30     	; 0xd6 <__vector_18+0x2c>
+  b8:	89 36       	cpi	r24, 0x69	; 105
+  ba:	99 f0       	breq	.+38     	; 0xe2 <__vector_18+0x38>
+  bc:	8b 32       	cpi	r24, 0x2B	; 43
+  be:	e1 f4       	brne	.+56     	; 0xf8 <__vector_18+0x4e>
+  c0:	19 c0       	rjmp	.+50     	; 0xf4 <__vector_18+0x4a>
+  c2:	82 37       	cpi	r24, 0x72	; 114
+  c4:	29 f0       	breq	.+10     	; 0xd0 <__vector_18+0x26>
+  c6:	83 37       	cpi	r24, 0x73	; 115
+  c8:	79 f0       	breq	.+30     	; 0xe8 <__vector_18+0x3e>
+  ca:	80 37       	cpi	r24, 0x70	; 112
+  cc:	a9 f4       	brne	.+42     	; 0xf8 <__vector_18+0x4e>
+  ce:	0f c0       	rjmp	.+30     	; 0xee <__vector_18+0x44>
+		case 'r': PORTC = 0x11; break;
+  d0:	91 e1       	ldi	r25, 0x11	; 17
+  d2:	98 b9       	out	0x08, r25	; 8
+  d4:	13 c0       	rjmp	.+38     	; 0xfc <__vector_18+0x52>
+		case 'a': PORTC = 0x02; break;
+  d6:	92 e0       	ldi	r25, 0x02	; 2
+  d8:	98 b9       	out	0x08, r25	; 8
+  da:	10 c0       	rjmp	.+32     	; 0xfc <__vector_18+0x52>
+		case 'm': PORTC = 0x04; break;
+  dc:	94 e0       	ldi	r25, 0x04	; 4
+  de:	98 b9       	out	0x08, r25	; 8
+  e0:	0d c0       	rjmp	.+26     	; 0xfc <__vector_18+0x52>
+		case 'i': PORTC = 0x08; break;
+  e2:	98 e0       	ldi	r25, 0x08	; 8
+  e4:	98 b9       	out	0x08, r25	; 8
+  e6:	0a c0       	rjmp	.+20     	; 0xfc <__vector_18+0x52>
+		case 's': PORTC = 0x10; break;
+  e8:	90 e1       	ldi	r25, 0x10	; 16
+  ea:	98 b9       	out	0x08, r25	; 8
+  ec:	07 c0       	rjmp	.+14     	; 0xfc <__vector_18+0x52>
+		case 'p': PORTC = 0x20; break;
+  ee:	90 e2       	ldi	r25, 0x20	; 32
+  f0:	98 b9       	out	0x08, r25	; 8
+  f2:	04 c0       	rjmp	.+8      	; 0xfc <__vector_18+0x52>
+		case '+': PORTC = 0x00; break;
+  f4:	18 b8       	out	0x08, r1	; 8
+  f6:	02 c0       	rjmp	.+4      	; 0xfc <__vector_18+0x52>
+		default: PORTC = 0x3f; break;
+  f8:	9f e3       	ldi	r25, 0x3F	; 63
+  fa:	98 b9       	out	0x08, r25	; 8
+	}
+	UDR0=dato;/*se agrego esta linea, tendra que ve con UMSEL?*/
+  fc:	80 93 c6 00 	sts	0x00C6, r24	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7e00c6>
+	reti();//regreso de la interrupcion
+ 100:	18 95       	reti
+
+00000102 <main>:
+}
+
+
+int main(void)
+{
+	conf_puertos();
+ 102:	0e 94 40 00 	call	0x80	; 0x80 <conf_puertos>
+	con_usart0();
+ 106:	0e 94 46 00 	call	0x8c	; 0x8c <con_usart0>
+	sei();
+ 10a:	78 94       	sei
+    /* Replace with your application code */
+    while (1) 
+    {
+    }
+ 10c:	ff cf       	rjmp	.-2      	; 0x10c <main+0xa>
+
+0000010e <_exit>:
+ 10e:	f8 94       	cli
+
+00000110 <__stop_program>:
+ 110:	ff cf       	rjmp	.-2      	; 0x110 <__stop_program>
